@@ -1,16 +1,39 @@
-Last login: Tue Jan 26 22:42:56 on console
-(base)
- 01:34:20  hanshan@hanshan-mbp  ~ 
-$ ssh $ubuntu
-^C
-(base)
- 01:34:46  ✘  hanshan@hanshan-mbp  ~  23s 
-$ ssh $ubuntu
-liuchao@10.211.55.11's password:
-Permission denied, please try again.
-liuchao@10.211.55.11's password:
-Permission denied, please try again.
-liuchao@10.211.55.11's password:
+if exists('*minpac#init')
+    " Minpac is loaded.
+    call minpac#init()
+    call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+    " Other plugins
+    call minpac#add('tpope/vim-eunuch')
+    call minpac#add('yegappan/mru')
+    call minpac#add('preservim/nerdtree')
+    call minpac#add('mbbill/VimExplorer')
+endif
+
+if has('eval')
+    " Minpac commands
+    command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
+    command! PackClean packadd minpac | source $MYVIMRC | call minpac#clean()
+    command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
+endif
+
+" 鼠标支持
+set mouse=a
+
+" 自动存盘
+set autowrite
+
+" 多窗口，快捷键映射
+nnoremap <C-Tab> <C-W>w
+inoremap <C-Tab> <C-O><C-W>w
+nnoremap <C-S-Tab> <C-W>W
+inoremap <C-S-Tab> <C-O><C-W>W
+
+
+" 最近使用文件
+
+if !has('gui_running')
+    " 设置⽂本菜单
     if has('wildmenu')
         set wildmenu
         set cpoptions-=<
@@ -19,5 +42,4 @@ liuchao@10.211.55.11's password:
         inoremap <F10> <C-O>:emenu <C-Z>
     endif
 endif
-
-                                                              37,1          Bot
+	
