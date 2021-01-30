@@ -1,3 +1,6 @@
+" 快速加载菜单项
+let do_syntax_sel_menu = 1
+let do_no_lazyload_menus = 1
 if exists('*minpac#init')
     " Minpac is loaded.
     call minpac#init()
