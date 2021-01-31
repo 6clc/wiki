@@ -37,6 +37,9 @@ function main() {
     upload)
       upload
     ;;
+    init)
+      init
+    ;;
     help)
       usage
     ;;

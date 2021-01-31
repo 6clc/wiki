@@ -19,6 +19,8 @@ do
 
   if [[ "$action" == "upload" ]]; then
     git add .
+    git config user.name liuchao
+    git config user.email chaoliu.lc@qq.com
     git commit -m "shell auto commit on ${commit_date}"
     git push
   fi
