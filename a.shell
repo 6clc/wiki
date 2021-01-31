@@ -1,0 +1,25 @@
+mkdir -p /tmp/gcc && \
+cd /tmp/gcc && \
+wget -O gcc-5.4.0.tar.bz2 http://gitlab.software.cambricon.com/neuware/platform/extra-dependencies/raw/master/gcc/gcc-5.4.0.tar.bz2 && \
+wget -O mpc-0.8.1.tar.gz http://gitlab.software.cambricon.com/neuware/platform/extra-dependencies/raw/master/gcc/mpc-0.8.1.tar.gz && \
+wget -O mpfr-2.4.2.tar.bz2 http://gitlab.software.cambricon.com/neuware/platform/extra-dependencies/raw/master/gcc/mpfr-2.4.2.tar.bz2 && \
+wget -O gmp-4.3.2.tar.bz2 http://gitlab.software.cambricon.com/neuware/platform/extra-dependencies/raw/master/gcc/gmp-4.3.2.tar.bz2 && \
+wget -O isl-0.14.tar.bz2 http://gitlab.software.cambricon.com/neuware/platform/extra-dependencies/raw/master/gcc/isl-0.14.tar.bz2 && \
+tar xvf gcc-5.4.0.tar.bz2 && \
+tar xvf mpc-0.8.1.tar.gz && \
+tar xvf mpfr-2.4.2.tar.bz2 && \
+tar xvf gmp-4.3.2.tar.bz2 && \
+tar xvf isl-0.14.tar.bz2 && \
+cd gcc-5.4.0 && \
+ln -s /tmp/gcc/mpc-0.8.1 mpc && \
+ln -s /tmp/gcc/mpfr-2.4.2 mpfr && \
+ln -s /tmp/gcc/gmp-4.3.2 gmp && \
+ln -s /tmp/gcc/isl-0.14 isl && \
+mkdir build && cd build && \
+../configure --enable-checking=release --enable-languages=c,c++ --disable-multilib && \
+make && \
+make install && \
+rm -f /usr/lib64/libstdc++.so.6 && \
+ln -sf /usr/local/lib64/libstdc++.so.6.0.21 /usr/lib64/libstdc++.so.6 && \
+cd / && \
+rm -rf /tmp/gcc

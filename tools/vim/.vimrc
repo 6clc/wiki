@@ -11,6 +11,7 @@ if exists('*minpac#init')
     call minpac#add('yegappan/mru')
     call minpac#add('preservim/nerdtree')
     call minpac#add('mbbill/VimExplorer')
+    call minpac#add('tpope/vim-fugitive')
 endif
 
 if has('eval')
