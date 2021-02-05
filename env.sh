@@ -18,7 +18,7 @@ function download() {
   echo "async vimrc"
   cp tools/vim/.vimrc ~/
   echo "async tmux config"
-  cp tools/tmux/.tmux.confg ~/
+  cp tools/tmux/.tmux.conf ~/
 }
 
 function upload() {
@@ -27,7 +27,7 @@ function upload() {
   echo "asynv config"
   ./tools/git/git_auto_commit.sh upload
   echo "async tmux"
-  cp ~/.tmux.confg tools/tmux
+  cp ~/.tmux.conf tools/tmux
 }
 
 function usage(){
