@@ -4,6 +4,10 @@ function init(){
   echo "download git minpac"
   git clone https://github.com/k-takata/minpac.git \
   ~/.vim/pack/minpac/opt/minpac
+
+  echo "download git tmux pac manager"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  bash ~/.tmux/plugins/tpm/bin/install_plugins
   
   download
 }
@@ -13,6 +17,8 @@ function download() {
   ./tools/git/git_auto_commit.sh download
   echo "async vimrc"
   cp tools/vim/.vimrc ~/
+  echo "async tmux config"
+  cp tools/tmux/.tmux.confg ~/
 }
 
 function upload() {
@@ -20,6 +26,8 @@ function upload() {
   cp ~/.vimrc tools/vim
   echo "asynv config"
   ./tools/git/git_auto_commit.sh upload
+  echo "async tmux"
+  cp ~/.tmux.confg tools/tmux
 }
 
 function usage(){
