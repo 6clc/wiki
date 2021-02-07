@@ -22,7 +22,7 @@ endif
 
 " 鼠标支持
 set mouse=a
-
+set number
 " 自动存盘
 set autowrite
 
