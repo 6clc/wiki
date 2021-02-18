@@ -34,7 +34,7 @@ from https://gist.github.com/ryerh/14b7c24dfd623ef8edc7
 
 ### <a name="WindowsTabs"></a>窗口 (标签页)
 
-    c  创建新窗口
+    c  创建新窗口 create
     w  列出所有窗口
     n  后一个窗口
     p  前一个窗口
