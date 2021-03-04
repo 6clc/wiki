@@ -1,14 +1,33 @@
 #!/bin/bash
 
 function init(){
-  echo "download git minpac"
+
+  workspace="/home/liuchao/init_wiki_tools"
+  if [ ! -f $workspace ]; then
+    mkdir -p $workspace
+  fi
+  application_dir="/home/liuchao/applications"
+  if [ ! -f $application_dir ]; then
+    mkdir -p $application_dir
+  fi
+
+  echo "intstal vim8 pac manager minpac"
   git clone https://github.com/k-takata/minpac.git \
   ~/.vim/pack/minpac/opt/minpac
 
-  echo "download git tmux pac manager"
+  echo "intsall tmux pac manager"
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   bash ~/.tmux/plugins/tpm/bin/install_plugins
+
+  echo "install starship"
+  git clone git@github.com:starship/starship.git $workspace
+  pushd $workspace/starship
+    bash install/install.sh -b $application_dir
+    sed -i '$a\eval "$(starship init bash)"' ~/.bashrc
+  popd
   
+  rm -rf $workspace
+
   download
 }
 
