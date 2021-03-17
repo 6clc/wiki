@@ -57,7 +57,7 @@ function auto_git_commit() {
       git config user.name liuchao
       git config user.email chaoliu.lc@qq.com
       git commit -m "shell auto commit on ${commit_date}"
-      git push
+      git push $REPO_URL
     fi
     popd
   done

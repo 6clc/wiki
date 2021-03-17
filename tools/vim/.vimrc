@@ -11,7 +11,6 @@ if exists('*minpac#init')
     call minpac#add('yegappan/mru')
     call minpac#add('preservim/nerdtree')
     call minpac#add('mbbill/VimExplorer')
-    call minpac#add('morhetz/gruvbox')
 endif
 
 if has('eval')
@@ -47,6 +46,3 @@ if !has('gui_running')
     endif
 endif
 	
-" 选择主题
-set background=dark
-colorscheme gruvbox
