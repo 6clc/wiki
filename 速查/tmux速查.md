@@ -139,7 +139,7 @@ from https://gist.github.com/ryerh/14b7c24dfd623ef8edc7
     ?  列出所有快捷键
     :  命令提示符
 
-##3 配置选项：
+## 3 配置选项：
 
     # 鼠标支持 - 设置为 on 来启用鼠标(与 2.1 之前的版本有区别，请自行查阅 man page)
     * set -g mouse on

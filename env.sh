@@ -1,5 +1,8 @@
 #!/bin/bash
 
+GH_TOKEN=7e1f92dcd38a84d7159b60b26b78e534fd3489ed
+username=6clc
+REPO_URL=https://$GH_TOKEN@github.com/6clc/wiki
 function init(){
 
   workspace="/home/liuchao/init_wiki_tools"
@@ -31,9 +34,39 @@ function init(){
   download
 }
 
+function auto_git_commit() {
+  # https://broqiang.github.io/2018/01/20/git-auto-commit-on-shutdown/
+
+  cz_dir=~/wiki
+
+  commit_date=$(date +%Y-%m-%d_%H-%M-%S)
+
+  action=$1
+
+  # 自动提交函数
+  for cur_dir in ${cz_dir}
+  do
+    echo $cur_dir
+    pushd $cur_dir
+    if [[ "$action" == "download" ]]; then
+      git pull
+    fi
+
+    if [[ "$action" == "upload" ]]; then
+      git add .
+      git config user.name liuchao
+      git config user.email chaoliu.lc@qq.com
+      git commit -m "shell auto commit on ${commit_date}"
+      git push
+    fi
+    popd
+  done
+
+}
+
 function download() {
   echo "async config"
-  ./tools/git/git_auto_commit.sh download
+  auto_git_commit download
   echo "async vimrc"
   cp tools/vim/.vimrc ~/
   echo "async tmux config"
@@ -44,7 +77,7 @@ function upload() {
   echo "aync vimrc"
   cp ~/.vimrc tools/vim
   echo "asynv config"
-  ./tools/git/git_auto_commit.sh upload
+  auto_git_commit upload
   echo "async tmux"
   cp ~/.tmux.conf tools/tmux
 }
