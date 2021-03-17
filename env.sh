@@ -49,7 +49,7 @@ function auto_git_commit() {
     echo $cur_dir
     pushd $cur_dir
     if [[ "$action" == "download" ]]; then
-      git pull
+      git pull $REPO_URL
     fi
 
     if [[ "$action" == "upload" ]]; then
@@ -68,8 +68,11 @@ function download() {
   echo "async config"
   auto_git_commit download
   echo "async vimrc"
+  if [ -f ~/.vimrc ]; then rm -rf ~/.vimrc; fi
   cp tools/vim/.vimrc ~/
+
   echo "async tmux config"
+  if [ -f ~/.tmux.conf ]; then rm -rf ~/.tmux.conf; fi
   cp tools/tmux/.tmux.conf ~/
 }
 
