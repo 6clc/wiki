@@ -10,3 +10,8 @@
 
 1. vim8配置
 2. tmux配置
+
+## download
+
+1. tmux
+2. starship

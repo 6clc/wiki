@@ -69,20 +69,20 @@ function download() {
   auto_git_commit download
   echo "async vimrc"
   if [ -f ~/.vimrc ]; then rm -rf ~/.vimrc; fi
-  cp tools/vim/.vimrc ~/
+  cp configs/.vimrc ~/
 
   echo "async tmux config"
   if [ -f ~/.tmux.conf ]; then rm -rf ~/.tmux.conf; fi
-  cp tools/tmux/.tmux.conf ~/
+  cp configs/.tmux.conf ~/
 }
 
 function upload() {
   echo "aync vimrc"
-  cp ~/.vimrc tools/vim
+  cp ~/.vimrc configs/
   echo "asynv config"
   auto_git_commit upload
   echo "async tmux"
-  cp ~/.tmux.conf tools/tmux
+  cp ~/.tmux.conf configs
 }
 
 function usage(){
