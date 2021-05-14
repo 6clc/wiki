@@ -3,7 +3,7 @@ from https://blog.csdn.net/yjk13703623757/article/details/78945576
 ## 1. 通过apt-get安装指定版本软件
 
 ```
-# apt-get install package=version1
+apt-get install package=version1
 ```
 
 ## 2. 查询指定软件有多少个版本

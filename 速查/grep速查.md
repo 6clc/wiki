@@ -13,3 +13,12 @@
 2. -w 完全匹配整个单词
 3. -l 只显示文件名，不显示匹配的内容
 4. -s 不显示错误信息
+
+## 查找目录下存在“hello-world”的文件
+
+```shell
+pushd $DIST_DIR
+grep -rn "hello-world"
+popd
+```
+

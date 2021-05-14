@@ -1,16 +1,21 @@
 ```yml
-
 variables:
-  TF_CENTOS_IMAGE: "aaa:bbb:ccc"
-  TF_UBUNTU_IMAGE: "aaa:bbb:ccc"
-  PyTorch_CENTOS_IMAGE: "aaa:bbb:ccc"
-  PyTorch_UBUNTU_IMAGE: "aaa:bbb:ccc"
+  AAA_IMAGE: "aaa:bbb:ccc"
+  BBB_IMAGE: "aaa:bbb:ccc"
+  CCC_IMAGE: "aaa:bbb:ccc"
 ```
 
-sed处理后输出
+处理后输出
 
 ```
-"aaa:bbb:ccc"
-"aaa:bbb:ccc"
-"aaa:bbb:ccc"
+"AAA_IMAGE=aaa:bbb:ccc"
+"BBB_IMAGE=aaa:bbb:ccc"
+"CCC_IMAGE=aaa:bbb:ccc"
 ```
+
+## 硬写
+
+```shell
+grep _IMAGE: $file | awk  -F ": " '{ printf("%s=%s", $1, $2) }'
+```
+
