@@ -48,5 +48,7 @@ if !has('gui_running')
 endif
 	
 " 选择主题
+syntax on
 set background=dark
 colorscheme gruvbox
+set backspace=2
