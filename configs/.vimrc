@@ -53,3 +53,9 @@ set background=dark
 colorscheme gruvbox
 set backspace=2
 let NERDTreeShowHidden=1
+
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {<CR>}<ESC>O

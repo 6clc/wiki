@@ -4,7 +4,7 @@ from https://gist.github.com/ryerh/14b7c24dfd623ef8edc7
 
 ## Tmux 快捷键 & 速查表 & 简明教程
 
-启动新会话：
+启动新会话(new session)：
 
     tmux [new -s 会话名 -n 窗口名]
 
@@ -32,13 +32,13 @@ from https://gist.github.com/ryerh/14b7c24dfd623ef8edc7
     s           列出所有会话
     $           重命名当前会话
 
-### <a name="WindowsTabs"></a>窗口 (标签页)
+### 窗口 (标签页)
 
     c  创建新窗口 create
     w  列出所有窗口
-    n  后一个窗口
-    p  前一个窗口
-    f  查找窗口
+    n  后一个窗口 next
+    p  前一个窗口 previous
+    f  查找窗口 find
     ,  重命名当前窗口
     &  关闭当前窗口
 
