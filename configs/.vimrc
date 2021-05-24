@@ -51,7 +51,5 @@ endif
 syntax on
 set background=dark
 colorscheme gruvbox
+set backspace=2
 let NERDTreeShowHidden=1
-set ts=2
-set expandtab
-set autoindent
