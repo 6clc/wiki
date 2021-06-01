@@ -27,3 +27,10 @@ enabled=0
 
 下载链接
 [https://youdu.im/download-linux/](https://youdu.im/download-linux/)
+
+## yakuake
+
+```shell
+sudo apt-get install yakuake
+```
+

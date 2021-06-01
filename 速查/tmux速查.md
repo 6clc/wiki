@@ -6,11 +6,11 @@ from https://gist.github.com/ryerh/14b7c24dfd623ef8edc7
 
 启动新会话(new session)：
 
-    tmux [new -s 会话名 -n 窗口名]
+    tmux new -s 会话名
 
-恢复会话：
+链接会话(attach session)：
 
-    tmux at [-t 会话名]
+    tmux a -t
 
 列出所有会话：
 
@@ -88,13 +88,15 @@ from https://gist.github.com/ryerh/14b7c24dfd623ef8edc7
 ​    
 ### 文本复制模式：
 
-按下 `PREFIX-[` 进入文本复制模式。可以使用方向键在屏幕中移动光标。默认情况下，方向键是启用的。在配置文件中启用 Vim 键盘布局来切换窗口、调整窗格大小。Tmux 也支持 Vi 模式。要是想启用 Vi 模式，只需要把下面这一行添加到 .tmux.conf 中：
+- 进入复制模式 `PREFIX-[`
+- 选择要复制的文本
+- 退出复制模式 `enter`, 按`PREFIX-]`粘贴
+
+在配置文件中启用 Vim 键盘布局来切换窗口、调整窗格大小。Tmux 也支持 Vi 模式。要是想启用 Vi 模式，只需要把下面这一行添加到 .tmux.conf 中：
 
     setw -g mode-keys vi
 
 启用这条配置后，就可以使用 h、j、k、l 来移动光标了。
-
-想要退出文本复制模式的话，按下回车键就可以了。然后按下 `PREFIX-]` 粘贴刚才复制的文本。
 
 一次移动一格效率低下，在 Vi 模式启用的情况下，可以辅助一些别的快捷键高效工作。
 

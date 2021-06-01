@@ -13,3 +13,21 @@
 ## vscode显示空格
 
 [https://blog.csdn.net/bmzk123/article/details/86501706](https://blog.csdn.net/bmzk123/article/details/86501706)
+
+## 查找空行
+
+```shell
+^\s*(?=\r?$)\n
+```
+
+## 自定义文件后缀的内容匹配
+
+[https://code.visualstudio.com/docs/languages/overview#_adding-a-file-extension-to-a-language](https://code.visualstudio.com/docs/languages/overview#_adding-a-file-extension-to-a-language)
+
+**php例子如下**
+```json
+"files.associations": {
+    "*.php4": "php",
+    "*.php5": "php"
+}
+```
