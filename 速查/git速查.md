@@ -38,3 +38,19 @@ git reset --soft origin/master
 ```shell
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ```
+
+## git推送tag
+
+和推送branch是类似的
+
+### 推送固定的tag
+
+```shell
+git push origin ${tag_name}
+```
+
+### 推送本地所有的tag
+
+```shell
+git push origin --tags
+```

@@ -61,4 +61,4 @@ nnoremap <C-Tab> <C-W>w
 inoremap <C-Tab> <C-O><C-W>w
 nnoremap <C-S-Tab> <C-W>W
 inoremap <C-S-Tab> <C-O><C-W>W
-
+set autosave=5
