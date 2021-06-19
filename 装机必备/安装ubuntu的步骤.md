@@ -42,3 +42,7 @@ sudo apt install dconf-editor
 接着运行dconf-editor命令启动图形界面，选择org >> gnome >> desktop >> input-sources，修改xkb-options为['caps:swapescape']
 
 [https://blog.csdn.net/lslin405/article/details/68059331#commentBox](https://blog.csdn.net/lslin405/article/details/68059331#commentBox)
+
+## 安装字体
+
+[https://blog.csdn.net/bitcarmanlee/article/details/79729634](https://blog.csdn.net/bitcarmanlee/article/details/79729634)

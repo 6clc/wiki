@@ -55,3 +55,15 @@ sudo vim ~/.xprofile
   export QT_IM_MODULE=fcitx
   export XMODIFIERS="@im=fcitx"
 ```
+
+## 安装字体
+
+https://panqiincs.me/2019/06/05/after-installing-manjaro/
+
+## google翻墙
+
+google-chrome --help
+
+## 终端代理
+
+[https://zhuanlan.zhihu.com/p/46973701](https://zhuanlan.zhihu.com/p/46973701)
