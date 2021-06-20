@@ -4,16 +4,6 @@ GH_TOKEN=7e1f92dcd38a84d7159b60b26b78e534fd3489ed
 username=6clc
 REPO_URL=https://$GH_TOKEN@github.com/6clc/wiki
 function init(){
-
-  workspace="/home/liuchao/init_wiki_tools"
-  if [ ! -f $workspace ]; then
-    mkdir -p $workspace
-  fi
-  application_dir="/home/liuchao/applications"
-  if [ ! -f $application_dir ]; then
-    mkdir -p $application_dir
-  fi
-
   echo "intstal vim8 pac manager minpac"
   git clone https://github.com/k-takata/minpac.git \
   ~/.vim/pack/minpac/opt/minpac
@@ -22,27 +12,13 @@ function init(){
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   bash ~/.tmux/plugins/tpm/bin/install_plugins
 
-  echo "install starship"
-  git clone git@github.com:starship/starship.git $workspace
-  pushd $workspace/starship
-    bash install/install.sh -b $application_dir
-    sed -i '$a\eval "$(starship init bash)"' ~/.bashrc
-  popd
-  
-  rm -rf $workspace
-
   download
 }
 
 function auto_git_commit() {
-  # https://broqiang.github.io/2018/01/20/git-auto-commit-on-shutdown/
-
   cz_dir=~/wiki
-
   commit_date=$(date +%Y-%m-%d_%H-%M-%S)
-
   action=$1
-
   # 自动提交函数
   for cur_dir in ${cz_dir}
   do
@@ -79,10 +55,10 @@ function download() {
 function upload() {
   echo "aync vimrc"
   cp ~/.vimrc configs/
-  echo "asynv config"
-  auto_git_commit upload
   echo "async tmux"
   cp ~/.tmux.conf configs
+  echo "asynv config"
+  auto_git_commit upload
 }
 
 function usage(){
