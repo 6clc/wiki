@@ -54,3 +54,9 @@ git push origin ${tag_name}
 ```shell
 git push origin --tags
 ```
+
+## 忽略本地文件的方法
+
+```shell
+.git/info/exclude
+```
