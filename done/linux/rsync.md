@@ -1,16 +1,3 @@
-## 判断当前用户所属组
-
-```shell
-groups # 当前用户所属
-groups ${UserName} # UserName用户所属
-```
-
-## mv
-
-目标文件夹存在或者不存在结果不同
-
-mv file1 /home/   file1被移动到/home 目录下
-mv file1  /aaa     当目标目录不存在时，文件被移动到/目录下，更名为aaa
 
 ## 快速拷贝、移动 rsync
 

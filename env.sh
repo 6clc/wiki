@@ -12,6 +12,8 @@ function init(){
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   bash ~/.tmux/plugins/tpm/bin/install_plugins
 
+  git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
   download
 }
 
