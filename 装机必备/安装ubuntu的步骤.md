@@ -46,3 +46,5 @@ sudo apt install dconf-editor
 ## 安装字体
 
 [https://blog.csdn.net/bitcarmanlee/article/details/79729634](https://blog.csdn.net/bitcarmanlee/article/details/79729634)
+
+[https://blog.csdn.net/azhegps/article/details/79385809](https://blog.csdn.net/azhegps/article/details/79385809)
